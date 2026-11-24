@@ -1,0 +1,113 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="description" content="Sole Shop - sneakers, boots and everyday shoes, built to move.">
+  <title>Sole Shop | Shoes built to move</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <a class="skip" href="#market">Skip to shop</a>
+  <header class="site-header">
+    <a class="logo" href="#top" aria-label="Sole Shop home">SOLE<br>SHOP.</a>
+    <nav aria-label="Main navigation">
+      <a href="#market">shop</a><a href="#guide">size guide</a><a href="#service">service</a>
+    </nav>
+    <div class="header-tools">
+      <label class="sr-only" for="search">Search shoes</label>
+      <input id="search" type="search" placeholder="search shoes">
+      <button id="cartBtn" class="bag-button" aria-label="Open bag">bag <span id="cartCount">0</span></button>
+    </div>
+    <button class="menu" aria-label="Toggle menu">menu</button>
+  </header>
+
+  <main id="top">
+    <section class="hero">
+      <div class="hero-meta"><span>01 - footwear, dialled in</span><span>scroll ↓</span></div>
+      <h1>RIGHT FIT.<br><span>RIGHT PAIR.</span><br>EVERY DAY.</h1>
+      <div class="hero-foot">
+        <p>Sneakers, boots and easy everyday shoes - real stock, clear sizing, and a bag that remembers what you picked.</p>
+        <div class="hero-stats"><span><b id="statCount">0</b> styles live</span><span><b>2–4</b> day delivery</span><span><b>60</b> day returns</span></div>
+      </div>
+    </section>
+
+    <section id="market" class="market">
+      <div class="section-intro">
+        <span>the shelves</span>
+        <h2>SHOP THE<br>WALL.</h2>
+        <p>Filter by category or search by name. Sizes are listed per style.</p>
+      </div>
+      <div class="controls">
+        <div class="filters" role="group" aria-label="Filter shoes">
+          <button class="active" data-filter="all">all</button>
+          <button data-filter="sneakers">sneakers</button>
+          <button data-filter="boots">boots</button>
+          <button data-filter="everyday">everyday</button>
+        </div>
+        <p id="resultCount" class="result-count" aria-live="polite"></p>
+      </div>
+      <div id="products" class="product-grid"></div>
+      <p id="noResults" class="no-results" hidden>No shoes match that search.</p>
+    </section>
+
+    <section id="guide" class="guide">
+      <div><span>02 - fit matters</span><h2>FIND YOUR<br>SIZE FIRST.</h2></div>
+      <table>
+        <caption class="sr-only">Size conversion chart</caption>
+        <thead><tr><th scope="col">US</th><th scope="col">UK</th><th scope="col">EU</th><th scope="col">CM</th></tr></thead>
+        <tbody>
+          <tr><td>7</td><td>6</td><td>40</td><td>25.0</td></tr>
+          <tr><td>8</td><td>7</td><td>41</td><td>26.0</td></tr>
+          <tr><td>9</td><td>8</td><td>42.5</td><td>27.0</td></tr>
+          <tr><td>10</td><td>9</td><td>44</td><td>28.0</td></tr>
+          <tr><td>11</td><td>10</td><td>45</td><td>29.0</td></tr>
+          <tr><td>12</td><td>11</td><td>46</td><td>30.0</td></tr>
+        </tbody>
+      </table>
+    </section>
+
+    <section id="service" class="service">
+      <div><span>03 - service</span><h2>BUILT AROUND<br>THE DETAILS.</h2></div>
+      <div class="service-grid">
+        <article><h3>Real stock</h3><p>Every style shows the sizes actually available, so you are not guessing.</p></article>
+        <article><h3>Fast dispatch</h3><p>Orders leave the shelf in 24 hours, Monday to Friday.</p></article>
+        <article><h3>Easy returns</h3><p>60 days to send them back, worn indoors only, tags on.</p></article>
+        <article><h3>Talk to a human</h3><p>Real people answer sizing questions before you buy.</p></article>
+      </div>
+    </section>
+
+    <section class="newsletter">
+      <p>new drops land monthly</p>
+      <h2>GET FIRST<br>DIBS.</h2>
+      <form id="newsletterForm" novalidate>
+        <label class="sr-only" for="email">Email address</label>
+        <input id="email" type="email" required placeholder="your email">
+        <button type="submit">join ↗</button>
+      </form>
+      <p id="formMsg" aria-live="polite"></p>
+    </section>
+  </main>
+
+  <footer>
+    <a class="logo" href="#top">SOLE<br>SHOP.</a>
+    <div><p>shop</p><a href="#market">all shoes</a><a href="#market">sneakers</a><a href="#market">boots</a></div>
+    <div><p>help</p><a href="#guide">size guide</a><a href="#service">shipping</a><a href="#service">returns</a></div>
+    <small>© <span id="year"></span> Sole Shop - demo storefront.</small>
+  </footer>
+
+  <aside id="cart" class="cart" aria-hidden="true" aria-label="Shopping bag">
+    <div class="cart-head"><h2>YOUR BAG</h2><button id="closeCart" aria-label="Close bag">×</button></div>
+    <div id="cartItems" class="cart-items"></div>
+    <div class="cart-foot">
+      <div class="row"><span>subtotal</span><strong id="subtotal">$0.00</strong></div>
+      <div class="row"><span>shipping</span><strong id="shipping">$0.00</strong></div>
+      <div class="row total"><span>total</span><strong id="total">$0.00</strong></div>
+      <button id="checkout">checkout ↗</button>
+      <small>Free shipping over $120. Taxes calculated at checkout.</small>
+    </div>
+  </aside>
+  <div id="overlay" class="overlay"></div>
+  <div id="toast" class="toast" role="status" aria-live="polite"></div>
+  <script src="app.js"></script>
+</body></html>
